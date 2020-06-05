@@ -1,2 +1,7 @@
 # tsp_solver
-Randomized Algorithms for Travelling Salesman Problem
+Implementation Randomized Algorithms for Travelling Salesman Problem
+
+- Genetic Algorithm
+- Simulated Annealing
+- Ant Colony Optimization
+
