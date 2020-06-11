@@ -1,7 +1,7 @@
 # randomized_tsp
 
 A python3 package implementing randomized algorithms for [Travelling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem).
-The implementations are based on [A first course in Artificial Intelligence: Deepak Khemani](https://www.mheducation.co.in/a-first-course-in-artificial-intelligence-9781259029981-india).
+The implementations are based off of [A first course in Artificial Intelligence: Deepak Khemani](https://www.mheducation.co.in/a-first-course-in-artificial-intelligence-9781259029981-india).
 
 The algorithms implemented include:
 - [Genetic Algorithm](https://en.wikipedia.org/wiki/Genetic_algorithm)
@@ -40,7 +40,7 @@ tour, cost = tsp_obj.ant_colony()
 
 All the three algorithms return that best tour found and the cost of that tour. Tour is represented using path representation.
 
-
+Some optional parameters are also available for the above algorithms.
 ```python
 def genetic_algorithm(self,
                       population_size=50,
@@ -78,4 +78,4 @@ Many of these algorithms need improvements and optimizations. If you want to imp
 
 ## Contact
 
-If you find any bugs then contact me on [gitter](https://gitter.im/akshatkarani) and open a issue on this repository.
+If you find any bugs then open a issue on this repository. You can also contact me on [gitter](https://gitter.im/akshatkarani).
