@@ -28,7 +28,6 @@ class Ant:
             denominator_sum = sum(prob_to_vist)
             prob_to_vist = [prob / denominator_sum for prob in prob_to_vist]
 
-            current_city = random.choices(self.to_visit, prob_to_vist, k=1)
-            current_city = current_city[0]
+            current_city = random.choices(self.to_visit, prob_to_vist, k=1)[0]
             self.tour.append(current_city)
             self.to_visit.remove(current_city)

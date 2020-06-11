@@ -12,7 +12,7 @@ def random_tour(num_of_cities):
 
 def cost(num_of_cities, distance_matrix, tour):
     """
-    Calculates cost of a tour
+    Given `distance_matrix` and `num_of_cities`, calculates cost of a tour
     """
     cost = 0
     for i in range(num_of_cities):

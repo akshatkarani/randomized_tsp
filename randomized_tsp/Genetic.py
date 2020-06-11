@@ -17,7 +17,8 @@ def calculate_fitness(population, num_of_cities, distance_matrix):
     Return a fitness list for the population
     Fitness is just 1 / cost(tour)
     """
-    fitness = [1 / cost(num_of_cities, distance_matrix, tour) for tour in population]
+    fitness = [1 / cost(num_of_cities, distance_matrix, tour) 
+               for tour in population]
     sum_fitness = sum(fitness)
     return [f / sum_fitness for f in fitness]
 
@@ -67,18 +68,32 @@ def cycle_crossover(num_of_cities, parent1, parent2):
 
 def mutate(num_of_cities, child):
     """
-    Given a child will exchange any two cities
+    Given a child will will give a mutation
+    Mutation is just random exchange any two cities
     """
     return random_neighbour(num_of_cities, child)
 
 
-def _genetic_algorithm(num_of_cities, distance_matrix, population_size, mutation_prob, crossover):
+def _genetic_algorithm(num_of_cities,
+                       distance_matrix,
+                       population_size,
+                       mutation_prob,
+                       crossover):
+    """
+    Implements the genetic algorithm for TSP
+    Returns the best tour found and cost of that tour
+    """
     crossover_func = order_crossover
     if crossover == 'cycle':
         crossover_func = cycle_crossover
 
     population = init_population(population_size, num_of_cities)
-    for _ in range(1000):
+
+    num_of_epochs = num_of_cities * 2
+    # In my experience a good value for `num_of_epochs` is directly
+    # proportional to `num_of_cities`.
+    # You can also experiment with different terminating condition
+    for _ in range(num_of_epochs):
         # selection
         fitness = calculate_fitness(population, num_of_cities, distance_matrix)
         selected = random.choices(population, fitness, k=population_size)
@@ -100,4 +115,4 @@ def _genetic_algorithm(num_of_cities, distance_matrix, population_size, mutation
         fitness = calculate_fitness(population, num_of_cities, distance_matrix)
         population = [tour for _, tour in sorted(zip(fitness, population), reverse=True)]
         population = population[:population_size]
-    return population[0]
+    return population[0], cost(num_of_cities, distance_matrix, population[0])
