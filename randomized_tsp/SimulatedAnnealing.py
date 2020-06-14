@@ -4,7 +4,10 @@ import random
 
 
 def sigmoid(x: float):
-    return 1 / (1 + math.exp(x))
+    try:
+        return 1 / (1 + math.exp(x))
+    except OverflowError:
+        return 0.99
 
 
 def cooling(temperature, time):
@@ -23,7 +26,7 @@ def _simulated_annealing(num_of_cities,
     num_of_epochs = 1000
     for time in range(num_of_epochs):
         for _ in range(1000):
-            if temperature < 0.000009e-300:
+            if temperature < 0.1e-100:
                 return best_tour, cost(num_of_cities, distance_matrix, best_tour)
             
             neighbour = random_neighbour(num_of_cities, tour)
