@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="randomized_tsp", # Replace with your own username
-    version="0.0.2",
+    version="0.0.1",
     author="Akshat Karani",
     author_email="akshatkarani@gmail.com",
     description="Randomized algorithms for Travelling Salesman Problem",

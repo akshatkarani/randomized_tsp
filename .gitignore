@@ -127,7 +127,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# TestFiles
-test.py
-euc_100

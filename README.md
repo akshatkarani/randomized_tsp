@@ -16,6 +16,8 @@ You can install this using `pip`. Just run
 
 ## Usage
 
+See [example](example/) here.
+
 If you have `n` cities in your problem then you need to define the distances between cities using a two dimensional `n X n` list.
 `distances[i][j]` should give the distance between city i and city j.
 
